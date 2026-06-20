@@ -1,0 +1,46 @@
+{
+  "name": "solana-smart-tx-stack",
+  "version": "1.0.0",
+  "description": "AI-assisted Solana transaction reliability stack: Jito bundles, Yellowstone slot streaming, lifecycle tracking, failure classification, and LLM-driven autonomous retry recovery.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check:rpc": "tsx src/scripts/check-rpc.ts",
+    "check:jito": "tsx src/scripts/check-jito.ts",
+    "check:balance": "tsx src/scripts/check-balance.ts",
+    "wallet:create": "tsx src/scripts/create-wallet.ts",
+    "airdrop": "tsx src/scripts/airdrop-devnet.ts",
+    "stream:capture": "tsx src/scripts/capture-stream-evidence.ts",
+    "leaders:learn-jito": "tsx src/scripts/learn-jito-leaders.ts",
+    "leaders:watch": "tsx src/scripts/watch-leaders.ts",
+    "slots:watch": "tsx src/scripts/watch-slots.ts",
+    "tip:check": "tsx src/scripts/check-tip.ts",
+    "bundle:preview": "tsx src/scripts/preview-bundle.ts",
+    "bundle:send": "tsx src/scripts/send-bundle.ts",
+    "evidence:bundles": "tsx src/scripts/run-bundle-evidence.ts",
+    "report:evidence": "tsx src/scripts/generate-evidence-report.ts",
+    "report:dashboard": "tsx src/scripts/generate-dashboard.ts",
+    "report:compliance": "tsx src/scripts/generate-compliance-audit.ts",
+    "fault:expired-blockhash": "tsx src/scripts/bundle-fault-expired-blockhash.ts",
+    "fault:compute-exceeded": "tsx src/scripts/bundle-fault-compute-exceeded.ts",
+    "fault:invalid-tip": "tsx src/scripts/bundle-fault-invalid-tip-account.ts",
+    "agent:diagnose": "tsx src/scripts/agent-diagnose-failure.ts",
+    "demo:autonomous-retry": "tsx src/scripts/demo-autonomous-retry.ts",
+    "config:final": "tsx src/scripts/print-final-config.ts",
+    "test": "tsx --test test/**/*.test.ts"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.95.4",
+    "@triton-one/yellowstone-grpc": "^1.3.0",
+    "bs58": "^6.0.0",
+    "dotenv": "^16.4.5",
+    "openai": "^4.73.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
